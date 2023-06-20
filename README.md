@@ -81,3 +81,10 @@ int main(void)
 Taxonomy: The vulnerability is a CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer and a CAPEC-242: Buffer Overflow via Environment Variables.
 
 CVSS Score: The CVSS3.1 score for this vulnerability is 7.8 (High).
+```
+
+### Sales of private models
+
+Email gregory@codesec.ai for private models. We can develop the tool or model to your companies needs.
+
+

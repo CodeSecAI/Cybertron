@@ -9,7 +9,7 @@ pip install langchain
 ```
 ### Example run
 ```
- python .\PenTestTool.py -m model.jsonl -t -p train -P train --provider azure --azure-model CodeSec --mode code-review -f ".c"
+$ python .\PenTestTool.py -m model.jsonl -t -p train -P train --provider azure --azure-model CodeSec --mode code-review -f ".c"
 Loaded 2534 records from model.jsonl
 CodeSec.ai Training Model Complete
 ---------------------------

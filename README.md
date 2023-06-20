@@ -24,13 +24,13 @@ Proof of Concept: To test the vulnerability, an attacker can input more than 4 c
 #!/bin/bash
 echo -n "Enter OTP (Five digits): "
 python -c 'print "A"*5' | ./23-bof
-```
+
 
 Taint Analysis: The input from gets() is directly stored in the tryOTP buffer, which is then used in the strcmp() function. This means that any input that overflows the buffer can potentially overwrite adjacent memory and modify the behavior of the program.
 
 Recommendation: To remediate the vulnerability, the gets() function should be replaced with a safer alternative such as fgets(). Additionally, the tryOTP buffer should be allocated with a size that can accommodate the maximum input length. The modified code is shown below:
 
-```
+
 #include <stdio.h>
 #include <string.h>
 
@@ -76,7 +76,7 @@ int main(void)
         }
     }
 }
-```
+
 
 Taxonomy: The vulnerability is a CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer and a CAPEC-242: Buffer Overflow via Environment Variables.
 

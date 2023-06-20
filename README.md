@@ -7,7 +7,7 @@ Beta release of Cybertron Model
 ```
 pip install langchain tiktoken openai
 ```
-### Code Review
+## Code Review
 ```
 $ python .\PenTestTool.py -m model.jsonl -t -p train -P train --provider azure --azure-model CodeSec --mode code-review -f ".c"
 Loaded 2534 records from model.jsonl
@@ -82,6 +82,7 @@ Taxonomy: The vulnerability is a CWE-119: Improper Restriction of Operations wit
 
 CVSS Score: The CVSS3.1 score for this vulnerability is 7.8 (High).
 ```
+----
 ## Exploit Development
 
 ```

@@ -123,8 +123,6 @@ print(payload)
 You can run this code by saving it to a file (e.g. `exploit.py`) and running it with Python: `python exploit.py | ./23-bof`. This will send the payload to the vulnerable program and overwrite the `root` variable with a non-zero value, allowing the user to bypass the OTP check and load the dashboard.
 ```
 
-### Sales of private models and tooling
-
-Email gregory@codesec.ai for private models. We can develop the tool or model to your companies needs.
-
+# Sales
+Contact: gregory@codesec.ai
 

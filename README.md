@@ -124,5 +124,7 @@ You can run this code by saving it to a file (e.g. `exploit.py`) and running it 
 ```
 
 # Sales
-Contact: gregory@codesec.ai
+
+## CodeSec.ai's new IoT, Decompiled C, and Automotive models are now available for purchase.
+### Contact: gregory@codesec.ai
 

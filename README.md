@@ -9,6 +9,17 @@ https://github.com/CodeSecAI/CodeReview/
 ```
 pip install langchain tiktoken openai
 ```
+### Edit config.ini
+```
+[API_KEYS]
+openai_api_key = OPEN_API_KEY
+azure_api_key = AZURE_API_KEY
+[ENDPOINT]
+azure = https://AZURE-ENDPOINT.openai.azure.com
+```
+
+Update this config file to match your credentials and endpoint.
+
 ## Code Review
 ```
 $ python .\PenTestTool.py -m model.jsonl -t -p train -P train --provider azure --azure-model CodeSec --mode code-review -f ".c"

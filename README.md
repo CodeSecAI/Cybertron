@@ -1,6 +1,8 @@
 # Cybertron
-Beta release of Cybertron Model
+Beta release of Cybertron Model.
 
+Read the blog post about CodeSec.ai model benchmarked against NCC Groups ChatGPT code review test.
+https://github.com/CodeSecAI/CodeReview/
 
 ## Setup
 
